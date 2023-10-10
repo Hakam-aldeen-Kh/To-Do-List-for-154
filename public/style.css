@@ -1,0 +1,153 @@
+User
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.counter {
+  width: 95%;
+  margin: auto;
+}
+
+.title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 80%;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.title .O {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(255, 104, 129);
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+}
+
+form {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 40px auto 25px auto;
+  width: 95%;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+form .text-box {
+  width: 70%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  font-size: 25px;
+}
+form .button-add {
+  color: white;
+  background-color: rgb(255, 104, 129);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  width: 15%;
+  font-size: 20px;
+}
+
+.tasks-view {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: auto;
+  padding: 20px;
+  width: 95%;
+  background-color: #eee;
+  border-radius: 15px;
+}
+
+.tasks-view p {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.tasks-view .tasks .one-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tasks-view .tasks .one-task div {
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  width: 80%;
+  font-size: 25px;
+}
+
+.check-button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.check-button:hover {
+  background-color: rgb(255, 104, 129);
+  color: white;
+}
+
+.clear {
+  text-align: center;
+  border-radius: 10px;
+  width: 25%;
+  height: 30px;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  margin-top: -5px;
+  margin-bottom:20px ;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+@media (min-width: 768px) {
+  .counter  {
+    width: 90%;
+  }
+  .title {
+    display: inline;
+  }
+  .check-button {
+    width: 60px;
+  height: 60px;
+  }
+}
+@media (min-width: 992px) {
+  .counter {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  .counter {
+    width: 50%;
+  }
+}
+
