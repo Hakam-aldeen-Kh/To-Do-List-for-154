@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
   if (window.localStorage.getItem("tasks")) {
     taskArray = JSON.parse(localStorage.getItem("tasks"));
     addToPage(taskArray);
-  } 
+  }
   textBox.focus();
 });
 
@@ -17,8 +17,8 @@ function loadTasks() {}
 
 buttonAdd.onclick = function (e) {
   if (textBox.value !== "") {
-    add((textBox.value).trim()); 
-    textBox.value = ""; 
+    add(textBox.value.trim());
+    textBox.value = "";
   }
   e.preventDefault();
 };
@@ -33,7 +33,7 @@ function add(text) {
     title: text.trim(),
     completed: false,
   };
-  taskArray.push(task); 
+  taskArray.push(task);
   addToPage(taskArray);
   saveTasks(taskArray);
   textBox.value = "";
