@@ -265,10 +265,7 @@ form .button-add {
 .cong-box {
   padding: 20px;
   color: black;
-  font-size: 25px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width: 500px;
-  height: 250px;
   background-color: rgb(255, 255, 255);
   opacity: 0.9;
   text-align: center;
@@ -279,6 +276,9 @@ form .button-add {
   border-radius: 7px;
   border: #000 dashed;
   z-index: 6;
+  width: 500px;
+  height: 250px;
+  font-size: 25px;
 }
 
 .ok-button {
@@ -289,11 +289,13 @@ form .button-add {
   background-color: rgb(255, 104, 129);
   color: white;
   border-radius: 7px;
-  width: 70px;
-  height: 50px;
   border: none;
   font-weight: bold;
   cursor: pointer;
+  padding: 10px;
+  width: 70px;
+  height: 50px;
+  font-size: 15px;
 }
 
 @keyframes move{
@@ -305,7 +307,7 @@ form .button-add {
 	}
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px), (max-width: 992px) {
   .counter {
     width: 90%;
   }
@@ -315,6 +317,17 @@ form .button-add {
   .check-button {
     width: 60px;
     height: 60px;
+  }
+  .cong-box {
+    width: 600px;
+    height: 350px;
+    font-size: 35px;
+  }
+  .ok-button {
+    width: 100px;
+    height: 70px;
+    font-size: 20px;
+    padding: 5px;
   }
 }
 @media (min-width: 992px) {
