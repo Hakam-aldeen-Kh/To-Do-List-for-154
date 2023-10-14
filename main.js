@@ -3,7 +3,18 @@ let buttonAdd = document.querySelector(".button-add");
 let allTasks = document.querySelector(".tasks");
 let taskView;
 let clearAll = document.querySelector(".clear");
+let pinkCover = document.querySelector(".cover");
 let taskArray = [];
+let pForRandomText = document.querySelector(".random-txt");
+let stopEvent = document.querySelector(".ok-button");
+let txtCongArr = [
+  "Sana güveniyorum",
+  "seninle gurur duyuyorum",
+  "Harika gidiyorsun",
+  "Sen harikasın",
+  "her zaman seninle olacağım",
+  "Hareket etmeye devam et kahraman",
+];
 
 window.addEventListener("load", function () {
   if (window.localStorage.getItem("tasks")) {
@@ -70,10 +81,10 @@ function remove(e) {
   let lastParts = partOfClass.slice(1, partOfClass.length);
   let afterProcessing = processing(lastParts);
   let elementToRemove = document.querySelector(`.task-${afterProcessing}`);
-
   if (elementToRemove) {
     allTasks.removeChild(elementToRemove);
     audio.play();
+    eventTaskComplete();
     let indexToRemove = -1;
     taskArray.forEach((task, index) => {
       let titleDelete = afterProcessing.trim().split("-").join(" ");
@@ -117,4 +128,18 @@ function loadTasks() {
       allTasks.appendChild(task);
     });
   }
+}
+
+function eventTaskComplete() {
+  pinkCover.style.display = "block";
+  let len = txtCongArr.length;
+  let randomNum = getRndInteger(0, len);
+  pForRandomText.textContent = txtCongArr[randomNum]
+  stopEvent.addEventListener("click",function() {
+    pinkCover.style.display = "none"; 
+  })
+}
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }

@@ -1,16 +1,32 @@
-User
-* {
+User * {
   margin: 0;
   box-sizing: border-box;
 }
 
+/*TODO::
+add div has a message for completed tasks
+*/
+
 .counter {
   width: 95%;
   margin: auto;
+  z-index: 1;
+  position: relative;
+}
+
+.cover {
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 104, 129, 0.5);
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  display: none;
 }
 
 .title {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 80%;
   text-align: center;
   font-size: 50px;
@@ -48,6 +64,10 @@ form .text-box {
   border: none;
   font-size: 25px;
 }
+form .text-box:focus {
+  border-bottom: 4px solid rgb(255, 104, 129);
+
+}
 form .button-add {
   color: white;
   background-color: rgb(255, 104, 129);
@@ -56,7 +76,7 @@ form .button-add {
   padding: 10px;
   cursor: pointer;
   width: 15%;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .tasks-view {
@@ -119,7 +139,7 @@ form .button-add {
   color: white;
   font-weight: bold;
   margin-top: -5px;
-  margin-bottom:20px ;
+  margin-bottom: 20px;
   font-size: 20px;
   cursor: pointer;
   display: flex;
@@ -127,9 +147,166 @@ form .button-add {
   justify-content: space-evenly;
 }
 
+.balloon {
+  width: 60px;
+  height: 75px;
+  background: #fa501daa; 
+  border-radius: 50%; 
+  position: absolute;
+  display: inline;
+  animation: move 2s ease-in infinite;
+  z-index: 5;
+}
+
+.balloon-top {
+  width: 15px;
+  height: 15px;
+  background: #fa501daa; 
+  border-top-left-radius: 50%; 
+  position: absolute;
+  bottom: -10px;
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 3;
+}
+
+.balloon-string {
+  width: 4px;
+  height: 50px;
+  background: #000; 
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.balloon:nth-child(2){
+	left: 20%;
+	top: 40%;
+	background-color: rgba(237, 77, 255, 0.744);
+	animation-duration: 3s;
+}
+.balloon:nth-child(2) .balloon-top {
+	background-color: rgba(237, 77, 255, 0.744);
+}
+
+.balloon:nth-child(3){
+	left: 30%;
+	top: 40%;
+	background-color: rgba(4, 250, 184, 0.792);
+	animation-duration: 4s;
+}
+.balloon:nth-child(3) .balloon-top {
+	background-color: rgba(4, 250, 184, 0.792);
+}
+
+
+.balloon:nth-child(4){
+	left: 40%;
+	top: 40%;
+	background-color: rgba(255, 204, 0, 0.756);
+	animation-duration: 5s;
+}
+.balloon:nth-child(4) .balloon-top {
+	background-color: rgba(255, 204, 0, 0.756);
+}
+
+.balloon:nth-child(5){
+	left: 50%;
+	top: 40%;
+	background-color: rgba(14, 170, 222, 0.747);
+	animation-duration: 6s;
+}
+.balloon:nth-child(5) .balloon-top {
+	background-color: rgba(14, 170, 222, 0.747);
+}
+
+.balloon:nth-child(6){
+	left: 60%;
+	top: 40%;
+	background-color: rgba(251, 6, 6, 0.562);
+	animation-duration: 2s;
+}
+.balloon:nth-child(6) .balloon-top {
+	background-color: rgba(251, 6, 6, 0.562);
+}
+
+.balloon:nth-child(7){
+	left: 70%;
+	top: 40%;
+	background-color: rgba(255, 0, 136, 0.559);
+	animation-duration: 7s;
+}
+.balloon:nth-child(7) .balloon-top {
+	background-color: rgba(255, 0, 136, 0.559);
+}
+
+.balloon:nth-child(8){
+	left: 80%;
+	top: 40%;
+	background-color: rgba(0, 0, 255, 0.521);
+	animation-duration: 3s;
+}
+.balloon:nth-child(8) .balloon-top {
+	background-color: rgba(0, 0, 255, 0.521);
+}
+
+.balloon:nth-child(9){
+	left: 90%;
+	top: 40%;
+	background-color: rgba(220, 20, 60, 0.329);
+	animation-duration: 4s;
+}
+.balloon:nth-child(9) .balloon-top {
+	background-color: rgba(220, 20, 60, 0.329);
+}
+
+.cong-box {
+  padding: 20px;
+  color: black;
+  font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 500px;
+  height: 250px;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.9;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 7px;
+  border: #000 dashed;
+  z-index: 6;
+}
+
+.ok-button {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgb(255, 104, 129);
+  color: white;
+  border-radius: 7px;
+  width: 70px;
+  height: 50px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes move{
+	0%{
+		top: 100%;
+	}
+	100%{
+		top: 0%;
+	}
+}
 
 @media (min-width: 768px) {
-  .counter  {
+  .counter {
     width: 90%;
   }
   .title {
@@ -137,7 +314,7 @@ form .button-add {
   }
   .check-button {
     width: 60px;
-  height: 60px;
+    height: 60px;
   }
 }
 @media (min-width: 992px) {
@@ -150,4 +327,3 @@ form .button-add {
     width: 50%;
   }
 }
-
