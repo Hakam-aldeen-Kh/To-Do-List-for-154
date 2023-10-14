@@ -314,6 +314,10 @@ form .button-add {
   .title {
     display: inline;
   }
+  form .button-add {
+    font-size: 19px;
+    font-weight: bold;
+  }
   .check-button {
     width: 60px;
     height: 60px;
